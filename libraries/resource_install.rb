@@ -11,7 +11,7 @@ class ElasticsearchCookbook::InstallResource < Chef::Resource::LWRPBase
 
   # if this version parameter is not set by the caller, we look at
   # `attributes/default.rb` for a default value to use, or we raise
-  attribute(:version, kind_of: String, default: '5.1.1')
+  attribute(:version, kind_of: String, default: '2.3.2')
 
   # we allow a string or symbol for this value
   attribute(:type, kind_of: String, equal_to: %w(package tarball repository), default: 'repository')
@@ -21,7 +21,7 @@ class ElasticsearchCookbook::InstallResource < Chef::Resource::LWRPBase
   attribute(:download_checksum, kind_of: String) # sha256
 
   # where to install?
-  attribute(:dir, kind_of: String, default: '/usr/share')
+  attribute(:dir, kind_of: String, default: '/usr/local')
 
   # attributes used by the package-flavor provider
   attribute(:package_options, kind_of: String)
